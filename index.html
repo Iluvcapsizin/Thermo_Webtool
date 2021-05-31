@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vapor Liquid Equilibrium</title>
+    <meta name="description" content="VLE Simulation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type ="text/css" href="/css/appstyle.css">
+    <!--  Include the raphael library from the jslibs directory  -->
+    <script type="text/javascript" src="jslibs/raphael.js"></script>
+<!--    <script type="text/javascript" src="Components/Lid.js"></script>-->
+    <!--  Use the require.js module loader, and tell it where our main JavaScript file is  -->
+<!--    <script defer type="text/javascript" src="appscripts/main.js"> </script>-->
+    <script defer src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script defer type="module" src="appscripts/main.js"> </script>
+    <title>VLE</title>
+
+</head>
+<body>
+<div class="notice">Your browser doesn't support CSS Grid Layout. Unfortunately, you won't be able to see the examples.
+</div>
+<div class="container">
+    <header>
+        <h1>Vapor Liquid Equilibrium GUI</h1>
+    </header>
+
+    <nav>
+        <!-- Surround the select box within a "custom-select" DIV element.
+        Remember to set the width: -->
+        <div>
+            <button id = "animationStartButton">Start/Stop</button>
+            <h2>Component A</h2>
+            <select id = "compAselect">
+            </select>
+            <br>
+            <h2>Component B</h2>
+            <select id = "compBselect">
+            </select>
+            <h2>Select Plot</h2>
+            <select id = "plotSelect">
+            </select>
+        </div>
+    </nav>
+
+    <main>
+        <div class="column" id ="centerDiv"></div>
+        <div class="column" id="Plotly"><!-- Plotly chart will be drawn inside this DIV --></div>
+    </main>
+    
+
+
+    <aside id="aside">
+        <div class="slidecontainer">
+                <h2>Temperature</h2>
+                <input type="range" min="0" max="200" value="100" class="slider" id="Tslider" oninput="this.nextElementSibling.value=this.value*2">
+                <output>50</output>
+                <h2>Pressure</h2>
+                <input type="range" min="0" max="100" value="100" class="slider" id="Pslider" oninput="this.nextElementSibling.value=this.value*2">
+                <output>101</output>
+            <h2>Composition</h2>
+            <input type ="range" min="0" max="100" value ="50" class="slider" id = "Zslider">          
+        </div>
+    </aside>
+
+    <footer>
+        <p> component A is red </p>
+    </footer>
+</div>
+
+
+</body>
+</html>
